@@ -1,11 +1,6 @@
 
 **Finding Lane Lines on the Road**
 
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
-
 [//]: # (Image References)
 
 [image1]: ./writeup/gray_image "Grayscale"
@@ -19,7 +14,7 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Pipeline of preprocessing and drawing lines.
 
 My pipeline consists of 6 steps.
 
@@ -41,10 +36,10 @@ My pipeline consists of 6 steps.
 6. Obtained lines are then overlayed on the initial images:
 ![alt text][image6]
 
-In order to draw a single line on the left and right lanes, draw_lines() function was modified. Once the coordinates was passed from hough transform to draw_lines(), slope for each line was calculated and was classified as left line or right line according the slope angle. Right and left slope angles were averaged. The farthest coordinate on the line from the base of image was noted. These coordinates and slope was used to determine the coordinate on the lower end of the image. A straight line was drawn to connect the determined coordinates.
+Function draw_lines() draws a single line on the left and right lanes. Once the coordinates was passed from hough transform to draw_lines(), slope for each line was calculated and was classified as left line or right line according the slope angle. Right and left slope angles were averaged. The farthest coordinate on the line from the base of image was noted. These coordinates and slope was used to determine the coordinate on the lower end of the image. A straight line was drawn to connect the determined coordinates.
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Potential shortcomings with current pipeline
 
 With the current pipeline there were a few shortcomings that were observed,
 
@@ -55,7 +50,7 @@ With the current pipeline there were a few shortcomings that were observed,
 3. If there is a curved road, the pipeline does not work.
 
 
-### 3. Suggest possible improvements to your pipeline
+### 3. Possible improvements to the pipeline
 
 A possible improvement would be to
 
